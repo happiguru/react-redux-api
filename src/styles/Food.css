@@ -1,0 +1,12 @@
+.recepie_thumb > img {
+  width: 250px;
+  border-radius: 25%;
+}
+
+.single_recepie {
+  margin-bottom: 20px;
+}
+
+.single_recepie > h3 {
+  margin-top: 25px;
+}

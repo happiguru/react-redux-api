@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Foods from '../components/Foods';
+import '../styles/filterform.css';
 
-const FoodList = ({ foods }) => {
+const FoodList = () => {
+  const foods = useSelector((state) => state.foods);
   const [input, setInput] = useState('');
   const [foodsFilter, setFoodsFilter] = useState(foods);
-
-  const handleSubmit = (e) => {
+  const handler = (e) => {
     e.preventDefault();
     const f = foods.filter((f) => f.strMeal.toUpperCase().includes(input.toUpperCase())
     || f.strCategory.toUpperCase().includes(input.toUpperCase())
-    || f.strAea.toUpperCase().includes(input.toUpperCase()));
+    || f.strArea.toUpperCase().includes(input.toUpperCase()));
     setFoodsFilter(f);
     setInput('');
     e.target.firstChild.value = '';
@@ -26,24 +26,24 @@ const FoodList = ({ foods }) => {
   }, [foods]);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="search-form">
-        <input className="search-input" onChange={(event) => setInput(event.target.value)} placeholder="Filter food by country, category or by name" />
-        <button className="btn" type="submit">Filter</button>
-      </form>
-      <div>
+    <>
+      <div className="filter-form">
+        <form onSubmit={handler} className="form-inline search-form">
+          <input className="form-control mb-2 mr-sm-2 form-input" onChange={(e) => setInput(e.target.value)} placeholder="Filter food by country, category or by name" />
+          <button className="btn btn-md btn-primary" type="submit">Filter</button>
+        </form>
+        <div className="my-3 text-center error" />
+      </div>
+      <div className="col-xl-12">
+        <div className="bradcam_text text-center">
+          <h3>Food Recipes</h3>
+        </div>
+      </div>
+      <div className="my-3">
         <Foods foods={foodsFilter || foods} />
       </div>
-    </div>
+    </>
   );
 };
 
-FoodList.propTypes = {
-  foods: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  foods: state.foods,
-});
-
-export default connect(mapStateToProps)(FoodList);
+export default FoodList;

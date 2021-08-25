@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import setTitleFilter from '../actions/Filter';
 import { addFoods } from '../actions/Foods';
+import '../styles/filterform.css';
 
 const FilterForm = ({ addFoods }) => {
   const [input, setInput] = useState('');
@@ -29,9 +30,9 @@ const FilterForm = ({ addFoods }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="d-flex">
-        <input placeholder="Search by first letter" onChange={(e) => setInput(e.target.value)} />
-        <button classNam="btn" type="submit">Search</button>
+      <form onSubmit={handleSubmit} className="form-inline filter-form">
+        <input className="form-control mb-2 mr-sm-2 form-input" placeholder="Search by first letter" onChange={(e) => setInput(e.target.value)} />
+        <button className="btn btn-md btn-secondary" type="submit">Search</button>
       </form>
     </div>
   );

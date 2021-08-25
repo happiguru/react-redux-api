@@ -1,0 +1,11 @@
+.header-area {
+  background-color: #000;
+}
+
+.header-area .main-header-area .main-menu.white_text li a {
+  color: #fff !important;
+}
+
+.main-container {
+  margin-top: 140px;
+}

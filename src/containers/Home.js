@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import FilterForm from './FilterForm';
 import FoodList from './FoodList';
 import { addFoods } from '../actions/Foods';
 
-const FoodItems = ({ addFoods }) => {
+const FoodItems = () => {
+  const dispatch = useDispatch();
   const fetchData = async () => {
     try {
       const { data } = await axios.get('https://www.themealdb.com/api/json/v1/1/search.php?f=c');
-      addFoods(data.meals);
+      dispatch(addFoods(data.meals));
       const el = document.querySelector('.error');
       el.innerHTML = '';
-    } catch {
+    } catch (error) {
       const el = document.querySelector('.error');
       el.innerHTML = 'Sorry, please try again!';
     }
@@ -24,19 +24,11 @@ const FoodItems = ({ addFoods }) => {
   }, []);
 
   return (
-    <div>
+    <div className="container home">
       <FilterForm />
       <FoodList />
     </div>
   );
 };
 
-FoodItems.propTypes = {
-  addFoods: PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  addFoods: (data) => dispatch(addFoods(data)),
-});
-
-export default connect(null, mapDispatchToProps)(FoodItems);
+export default FoodItems;

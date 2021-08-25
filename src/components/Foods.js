@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../styles/Food.css';
 
 const Foods = ({ foods }) => (
-  <div className="food-card d-flex">
+  <div className="row">
     {foods && foods.map((food) => (
-      <Link className="food-item" key={food.idMeal} to={`/${food.idMeal}`}>
-        <div className="food-card" style={{ width: '18rem', height: '30rem' }}>
-          <img src={food.strMealThumb} alt={food.strMeal} />
-          <div className="food-card-body">
+      <div className="col-xl-4 col-lg-3 col-md-6" key={food.idMeal}>
+        <Link to={`/${food.idMeal}`}>
+          <div className="single_recepie text-center">
+            <div className="recepie_thumb">
+              <img src={food.strMealThumb} alt={food.strMeal} />
+            </div>
             <h3>{food.strMeal}</h3>
-            <p className="card-text">{food.strArea}</p>
-            <p className="card-text">{food.strCategory}</p>
+            <span>{food.strArea}</span>
+            <p>{food.strCategory}</p>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
     ))}
   </div>
 );
