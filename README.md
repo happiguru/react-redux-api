@@ -1,12 +1,13 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # React-Redux Catalogue Statistics Application
-Catalogue Statistics Application
+Foodistics is a Catalogue Statistics Application
 
 This projects implements the use of React-redux library to build a Catalogue Statistics application.
 
-1. Catalogue Statistics Application built entirely with React JS.
+1. Foodistics was built entirely using frameworks such as React JS and Redux.
 2. ES6 and Modules.
 3. Object Oriented Programming Approach.
+4. Redux state management
 
 ## Built With
 
@@ -17,8 +18,9 @@ This projects implements the use of React-redux library to build a Catalogue Sta
 - npm
 - CSS3
 - JavaScript/ES6
+- Redux
 
-<!-- ![screenshot](./src/images/pict.png) -->
+![screenshot](./src/images/pict.png)
 ## Live Demo
 
 [Live Demo Link](https://react-redux-api.herokuapp.com/)
