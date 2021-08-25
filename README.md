@@ -23,7 +23,7 @@ This projects implements the use of React-redux library to build a Catalogue Sta
 ![screenshot](./src/images/pict.png)
 ## Live Demo
 
-[Live Demo Link](https://react-redux-api.herokuapp.com/)
+[Live Demo Link](https://food-react-redux-api.herokuapp.com/)
 
 
 ## Getting Started
