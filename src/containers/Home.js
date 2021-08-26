@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import FilterForm from './FilterForm';
 import FoodList from './FoodList';
 import { addFoods } from '../actions/Foods';
 
@@ -25,7 +24,6 @@ const FoodItems = () => {
 
   return (
     <div className="container home">
-      <FilterForm />
       <FoodList />
     </div>
   );
