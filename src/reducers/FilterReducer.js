@@ -1,10 +1,12 @@
+import { FILTERED_FOODS } from '../actionTypes/index';
+
 const defaultFilterState = {
   title: '',
 };
 
 const filterReducer = (state = defaultFilterState, action) => {
   switch (action.type) {
-    case 'SET_TITLE_FILTER':
+    case FILTERED_FOODS:
       return {
         ...state,
         title: action.title,
