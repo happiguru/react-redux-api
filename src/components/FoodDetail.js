@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { updateFoods } from '../actions/Foods';
+import { getFoodDetails } from '../actions/loadFoodAction';
 import '../styles/FoodDetail.css';
 
-const FoodsDetail = ({ food }) => (
+const FoodDetail = ({
+  food,
+}) => (
   <div className="container mx-auto">
     <div className="row my-2">
       <div className="col-12 col-md-6">
@@ -55,7 +57,7 @@ const FoodsDetail = ({ food }) => (
   </div>
 );
 
-FoodsDetail.propTypes = {
+FoodDetail.propTypes = {
   food: PropTypes.shape({
     idMeal: PropTypes.string.isRequired,
     strMeal: PropTypes.string.isRequired,
@@ -77,7 +79,7 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateFoods: (id, update) => dispatch(updateFoods(id, update)),
+  getFoodDetails: (id, update) => dispatch(getFoodDetails(id, update)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FoodsDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(FoodDetail);
