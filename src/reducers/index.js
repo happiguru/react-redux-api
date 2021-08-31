@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import foodReducer from './FoodReducer';
+import foodsReducer from './FoodsReducer';
 import filterReducer from './FilterReducer';
 
 const allReducers = combineReducers({
-  foods: foodReducer,
-  filters: filterReducer,
+  foods: foodsReducer,
+  filter: filterReducer,
 });
 
 export default allReducers;
