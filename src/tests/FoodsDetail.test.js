@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import FoodsDetail from '../components/FoodsDetail';
+import FoodsDetail from '../components/FoodDetail';
 import TestStore from './store';
 
 describe('Foods list', () => {

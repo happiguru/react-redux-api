@@ -4,11 +4,11 @@ import { Provider } from 'react-redux';
 import './index.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './containers/Home';
-import FoodsDetail from './components/FoodsDetail';
+import FoodDetail from './components/FoodDetail';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import reportWebVitals from './reportWebVitals';
-import store from './store';
+import store from './store/store';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,7 +18,7 @@ ReactDOM.render(
         <div className="main-container">
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/:id" component={FoodsDetail} />
+            <Route exact path="/:id" component={FoodDetail} />
           </Switch>
           <Footer />
         </div>

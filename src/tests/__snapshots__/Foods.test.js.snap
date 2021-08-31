@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Foods list should match with snapshot 1`] = `[Function]`;
-
-exports[`Renders Foods 1`] = `
-<div
-  className="row"
-/>
-`;

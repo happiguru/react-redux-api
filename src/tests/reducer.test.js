@@ -1,32 +1,32 @@
-import foodReducer from '../reducers/FoodReducer';
+import foodsReducer from '../reducers/FoodsReducer';
 import foods from './data';
 
 describe('foodsReducer', () => {
   test('should set empty array by default', () => {
-    const state = foodReducer(undefined, { type: '@@INIT' });
+    const state = foodsReducer(undefined, { type: '@@INIT' });
     expect(state).toEqual([]);
   });
 
   test('should set empty array by default', () => {
-    const state = foodReducer(undefined, { type: '@@INIT' });
+    const state = foodsReducer(undefined, { type: '@@INIT' });
     expect(state).not.toEqual({});
   });
 
   test('should add foods as a new state', () => {
     const action = {
-      type: 'ADD_FOODS',
+      type: 'LOAD_FOODS',
       foods,
     };
-    const state = foodReducer(undefined, action);
+    const state = foodsReducer(undefined, action);
     expect(state).toEqual([...foods]);
   });
 
   test('should add foods as a new state', () => {
     const action = {
-      type: 'ADD_FOODS',
+      type: 'LOAD_FOODS',
       foods,
     };
-    const state = foodReducer(undefined, action);
+    const state = foodsReducer(undefined, action);
     expect(state).not.toEqual({});
   });
 });
